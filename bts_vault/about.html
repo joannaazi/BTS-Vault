@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About BTS Vault</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ======================
+       HERO SECTION
+    ====================== */
+    .about-hero {
+      background: linear-gradient(135deg, #AC8CD3, #E5B0DF);
+      padding: 80px 20px 60px 20px;
+      color: #fafafa;
+    }
+
+    .about-hero-container {
+      display: flex;
+      justify-content: flex-start; /* logo left, title right */
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 50px; /* reduced space between logo and title */
+      flex-wrap: wrap;
+    }
+
+    .about-hero-container img {
+      width: 350px; /* slightly smaller logo */
+      height: 350px;
+      border-radius: 50%;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      animation: bounce-roll 4s ease-in-out infinite;
+    }
+
+    .about-hero-container h1 {
+      font-size: 85px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .about-hero-subtext {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    @keyframes bounce-roll {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+      15% { transform: translateY(10px) rotate(0deg); opacity: 1; }
+      25% { transform: translateY(0) rotate(0deg); }
+      65% { transform: translateY(0) rotate(0deg); }
+      75% { transform: translateY(0) rotate(360deg); }
+      90% { transform: translateY(0) rotate(360deg); }
+      100% { transform: translateY(-50px) rotate(360deg); opacity: 0; }
+    }
+
+    /* ======================
+       ABOUT CARDS
+    ====================== */
+    .about-section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(246, 17, 17, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      color: #111111;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .about-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e997c8;
+      display: inline-block;
+      padding-bottom: 5px;
+      position: relative;
+    }
+
+    .about-section h2::before {
+      content: "★";
+      position: absolute;
+      left: -30px;
+      color: #e266b1;
+      font-size: 28px;
+      top: -5px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* ======================
+       FOOTER
+    ====================== */
+    .footer {
+    background: linear-gradient(135deg, var(--purple-dark), var(--lavender));
+    color: var(--white);
+    padding: 60px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--pink-light);
+    display: inline-block;
+    padding-bottom: 5px;
+    color: var(--white);
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--pink-light);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.social-links a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+
+    /* RESPONSIVE */
+    @media screen and (max-width: 768px) {
+      .about-hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px; /* smaller gap on mobile */
+      }
+      .about-hero-container img {
+        width: 180px;
+        height: 180px;
+      }
+      .about-hero-container h1 {
+        font-size: 48px;
+      }
+      .about-section {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="logo">BTS Vault</a>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="albums.html">Albums</a></li>
+    <li><a class="active" href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="about-hero-container">
+    <img src="photos/btsvaultlogo.png" alt="BTS Vault Logo">
+    <h1>BTS VAULT</h1><br><br><br>
+  </div>
+  <br><br><br><p class="about-hero-subtext">Every era. Every story. One place for ARMY.</p>
+</section>
+
+<!-- OUR STORY -->
+<section class="about-section">
+  <h2>Our Story</h2>
+  <p>
+    BTS Vault is a fan‑centric web platform created to showcase and organize BTS albums in one interactive space.
+    It is designed to provide an engaging experience for fans by combining thoughtful presentation, smooth navigation,
+    and a visually appealing archive of BTS discography.
+  </p>
+</section>
+
+<!-- OUR MISSION -->
+<section class="about-section">
+  <h2>Our Mission</h2>
+  <p>
+    To bring ARMY worldwide closer to BTS’s music by building a digital hub that celebrates every album,
+    every era, and every story in one place.
+  </p>
+</section>
+
+<!-- ABOUT THE DESIGNER -->
+<section class="about-section">
+  <h2>About the Designer</h2>
+  <p>
+    BTS Vault was designed and developed by <strong>Joanna Mae M. Capua</strong>,
+    a college student currently pursuing a degree in Information Technology.
+    Passionate about web design and K‑pop, she created this project to blend
+    technical skills with fandom creativity, offering ARMY a unique digital space
+    to explore BTS’s discography.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>BTS Vault</h3>
+      <p>&copy; 2026 BTS Vault. All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Designer Info</h3>
+      <p>Joanna Mae M. Capua – Web Developer & UI/UX Designer</p>
+      <p>Portfolio: <a href="https://yourportfolio.com" target="_blank">joannaportfolio.com</a></p>
+      <p>Email: <a href="mailto:joannamaecapua15@gmail.com">joannamaecapua15@gmail.com</a></p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+     <div class="social-links">
+  <a href="#https://twitter.com"><img src="photos/twitter.png" alt="Twitter"></a>
+  <a href="#https://instagram.com"><img src="photos/instagram.png" alt="Instagram"></a>
+</div>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Designed & Developed by Joanna Mae M. Capua</p>
+  </div>
+</footer>
+
+
+
+<script>
+  // ===============================
+  // FADE-IN ANIMATION ON SCROLL
+  // ===============================
+  const sections = document.querySelectorAll('.about-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
